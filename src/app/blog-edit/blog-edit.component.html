@@ -1,0 +1,36 @@
+
+  <div class="container">
+    <div class="row" style="text-align: left">
+      <div class="col-md-12" >
+          <form #createBlogForm ="ngForm" (ngSubmit)="editTheBlog()" *ngIf="currentBlog">
+              <div class="form-group" >
+                <label for="formGroupExa mpleInput">Title</label>
+                <input type="text" class="form-control" name="blogTitle" [(ngModel)]="currentBlog.title" #title="ngModel"   id="formGroupExampleInput" placeholder="Example input" required>
+              </div>
+              <div [hidden]="title.valid || title.pristine" class="alert alert-danger">Blog title is required</div>
+              <div class="form-group">
+                <label for="formGroupExampleInput2">Description</label>
+                <input type="text" class="form-control" name="blogDescription" [(ngModel)]="currentBlog.description" #description="ngModel"  id="formGroupExampleInput2" placeholder="Another input" required>
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">Body Html</label>
+                <textarea class="form-control" name="blogBodyHtml" [(ngModel)]="currentBlog.bodyHtml" #bodyHtml="ngModel" id="exampleFormControlTextarea1" rows="3" required></textarea>
+              </div>
+              <div class="form-group">
+              <label for="formGroupExampleInput4">Category</label>
+              <select class="form-control form-control-lg" name="category" [(ngModel)]="currentBlog.category" #category="ngModel"  required>
+                  <option *ngFor ="let category of possibleCategories "  [value]="category">{{category}}</option>
+                </select>
+                
+              </div>
+              
+              <button type="submit" class="btn btn-default" [disabled]="!createBlogForm.form.valid">Submit</button>
+            </form>
+            
+      </div>
+    </div>
+  </div>
+
+  
+  
+

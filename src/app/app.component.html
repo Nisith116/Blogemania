@@ -1,0 +1,22 @@
+<div style="text-align: center">
+<div class="container">
+  <div class="row header">
+    <div class="col-md-12">
+      <h1 style="color:white">Blogemania</h1>
+    </div>
+  </div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link active" [routerLink]="['/home']">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link" [routerLink]="['/about']">About</a>
+          <a class="nav-item nav-link" [routerLink]="['/create']">Post a blog</a>
+          
+        </div>
+      </div>
+    </nav>
+</div>
+<router-outlet></router-outlet>
+</div>
+
